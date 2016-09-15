@@ -1,0 +1,19 @@
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+# Eclipse-specific #
+.settings/
+.classpath
+.project
+target/
+# Others #
+*~
+.DS_Store
+.faces-config.xml.jsfdia
+MANIFEST.MF
+.idea
+*.iml
+/*.pmd
