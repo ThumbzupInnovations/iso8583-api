@@ -18,11 +18,8 @@ package org.lostcoder.iso8583;
 
 import org.lostcoder.iso8583.exception.Iso8583Exception;
 
-/**
- * Created by Sean on 2016/09/15.
- */
 public interface Iso8583Service {
-    Iso8583Message create(String mti, AcquirerProtocol protocol) throws Iso8583Exception;
+    Iso8583Message create(String mti, AcquirerProtocol protocol);
 
     Iso8583Message create(byte[] isodata, AcquirerProtocol protocol) throws Iso8583Exception;
 

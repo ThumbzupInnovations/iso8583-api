@@ -16,9 +16,6 @@
 
 package org.lostcoder.iso8583.exception;
 
-/**
- * Created by Sean on 2016/09/15.
- */
 public class Iso8583Exception extends Exception {
     public Iso8583Exception(Exception e) {
         super(e);

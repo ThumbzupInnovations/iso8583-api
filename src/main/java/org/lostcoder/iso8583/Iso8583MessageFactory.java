@@ -18,17 +18,13 @@ package org.lostcoder.iso8583;
 
 import org.lostcoder.iso8583.exception.Iso8583Exception;
 
-import java.util.Iterator;
 import java.util.ServiceLoader;
 
-/**
- * Created by Sean on 2016/09/15.
- */
 public class Iso8583MessageFactory {
 
     private static final ServiceLoader<Iso8583Service> serviceList = ServiceLoader.load(Iso8583Service.class);
 
-    public static Iso8583Message create(String mti, AcquirerProtocol protocol) throws Iso8583Exception {
+    public static Iso8583Message create(String mti, AcquirerProtocol protocol) {
         return getService(protocol).create(mti, protocol);
     }
 
@@ -37,7 +33,6 @@ public class Iso8583MessageFactory {
     }
 
     private static Iso8583Service getService(AcquirerProtocol protocol) {
-        Iterator<Iso8583Service> iter = serviceList.iterator();
         for (Iso8583Service iso8583Service : serviceList) {
             if (iso8583Service.supports(protocol)) {
                 return iso8583Service;

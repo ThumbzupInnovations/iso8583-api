@@ -18,9 +18,6 @@ package org.lostcoder.iso8583;
 
 import org.lostcoder.iso8583.exception.Iso8583Exception;
 
-/**
- * Created by Sean on 2016/09/15.
- */
 public interface Iso8583Message {
 
     void setField(int no, String value) throws Iso8583Exception;
@@ -49,5 +46,5 @@ public interface Iso8583Message {
 
     void setResponseMessageType() throws Iso8583Exception;
 
-    void setRetransmissionMessageType() throws  Iso8583Exception;
+    void setRetransmissionMessageType() throws Iso8583Exception;
 }
