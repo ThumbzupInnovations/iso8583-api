@@ -14,9 +14,9 @@
  *     limitations under the License.
  */
 
-package org.lostcoder.iso8583;
+package com.thumbzup.iso8583;
 
-import org.lostcoder.iso8583.exception.Iso8583Exception;
+import com.thumbzup.iso8583.exception.Iso8583Exception;
 
 public interface Iso8583Message {
 

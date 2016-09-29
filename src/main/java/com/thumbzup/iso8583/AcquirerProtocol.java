@@ -14,7 +14,7 @@
  *     limitations under the License.
  */
 
-package org.lostcoder.iso8583;
+package com.thumbzup.iso8583;
 
 public enum AcquirerProtocol {
     BASE24, AS2805

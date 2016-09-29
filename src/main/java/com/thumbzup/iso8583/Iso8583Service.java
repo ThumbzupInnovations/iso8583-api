@@ -14,10 +14,14 @@
  *     limitations under the License.
  */
 
-package org.lostcoder.iso8583.exception;
+package com.thumbzup.iso8583;
 
-public class Iso8583Exception extends Exception {
-    public Iso8583Exception(Exception e) {
-        super(e);
-    }
+import com.thumbzup.iso8583.exception.Iso8583Exception;
+
+public interface Iso8583Service {
+    Iso8583Message create(String mti, byte[] header, AcquirerProtocol protocol);
+
+    Iso8583Message parse(byte[] isodata, int headerLength, AcquirerProtocol protocol) throws Iso8583Exception;
+
+    boolean supports(AcquirerProtocol protocol);
 }

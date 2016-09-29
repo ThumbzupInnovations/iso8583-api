@@ -14,9 +14,9 @@
  *     limitations under the License.
  */
 
-package org.lostcoder.iso8583;
+package com.thumbzup.iso8583;
 
-import org.lostcoder.iso8583.exception.Iso8583Exception;
+import com.thumbzup.iso8583.exception.Iso8583Exception;
 
 import java.util.ServiceLoader;
 
@@ -24,12 +24,12 @@ public class Iso8583MessageFactory {
 
     private static final ServiceLoader<Iso8583Service> serviceList = ServiceLoader.load(Iso8583Service.class);
 
-    public static Iso8583Message create(String mti, AcquirerProtocol protocol) {
-        return getService(protocol).create(mti, protocol);
+    public static Iso8583Message create(String mti, byte[] header, AcquirerProtocol protocol) {
+        return getService(protocol).create(mti, header, protocol);
     }
 
-    public static Iso8583Message create(byte[] isodata, AcquirerProtocol protocol) throws Iso8583Exception {
-        return getService(protocol).create(isodata, protocol);
+    public static Iso8583Message parse(byte[] isodata, AcquirerProtocol protocol, int headerLength) throws Iso8583Exception {
+        return getService(protocol).parse(isodata, headerLength, protocol);
     }
 
     private static Iso8583Service getService(AcquirerProtocol protocol) {
