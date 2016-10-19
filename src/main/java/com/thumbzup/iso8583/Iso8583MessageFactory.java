@@ -22,7 +22,7 @@ import java.util.ServiceLoader;
 
 public class Iso8583MessageFactory {
 
-    private static final ServiceLoader<Iso8583Service> serviceList = ServiceLoader.load(Iso8583Service.class);
+    private static ServiceLoader<Iso8583Service> serviceList;
 
     public static Iso8583Message create(String mti, byte[] header, AcquirerProtocol protocol) {
         return getService(protocol).create(mti, header, protocol);
@@ -33,6 +33,9 @@ public class Iso8583MessageFactory {
     }
 
     private static Iso8583Service getService(AcquirerProtocol protocol) {
+        if (serviceList == null) {
+            serviceList = ServiceLoader.load(Iso8583Service.class);
+        }
         for (Iso8583Service iso8583Service : serviceList) {
             if (iso8583Service.supports(protocol)) {
                 return iso8583Service;
@@ -40,4 +43,5 @@ public class Iso8583MessageFactory {
         }
         throw new RuntimeException("No services implementations found for " + Iso8583MessageFactory.class + " and protocol " + protocol);
     }
+
 }
