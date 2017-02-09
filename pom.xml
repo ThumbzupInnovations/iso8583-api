@@ -11,7 +11,7 @@
 
     <groupId>com.thumbzup.iso8583</groupId>
     <artifactId>iso8583-api</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>

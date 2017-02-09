@@ -22,7 +22,11 @@ public interface Iso8583Message {
 
     void setField(int no, String value) throws Iso8583Exception;
 
+    void setField(String path, String value) throws Iso8583Exception;
+
     void setField(int no, byte[] value) throws Iso8583Exception;
+
+    void setField(String path, byte[] value) throws Iso8583Exception;
 
     int getMaxField();
 
@@ -32,17 +36,29 @@ public interface Iso8583Message {
 
     boolean hasField(int no);
 
+    boolean hasPathField(String path) throws Iso8583Exception;
+
     Object getFieldValue(int no) throws Iso8583Exception;
+
+    Object getFieldValue(String path) throws Iso8583Exception;
 
     String getMessageType() throws Iso8583Exception;
 
     String getFieldValueAsString(int no);
 
+    String getFieldValueAsString(String path) throws Iso8583Exception;
+
     byte[] getFieldValueAsEncoded(int no) throws Iso8583Exception;
 
-    String getFieldDescription(int no);
+    byte[] getFieldValueAsEncoded(String path) throws Iso8583Exception;
+
+    String getFieldDescription(int no) throws Iso8583Exception;
+
+    String getFieldDescription(String path) throws Iso8583Exception;
 
     byte[] getFieldValueAsBytes(int no);
+
+    byte[] getFieldValueAsBytes(String path);
 
     void setResponseMessageType() throws Iso8583Exception;
 
