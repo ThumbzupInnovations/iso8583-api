@@ -34,6 +34,10 @@ public interface Iso8583Message {
 
     boolean isNetworkMessage() throws Iso8583Exception;
 
+    boolean isRequestMessage() throws Iso8583Exception;
+
+    boolean isResponseMessage() throws Iso8583Exception;
+
     boolean hasField(int no);
 
     boolean hasPathField(String path) throws Iso8583Exception;
@@ -63,4 +67,6 @@ public interface Iso8583Message {
     void setResponseMessageType() throws Iso8583Exception;
 
     void setRetransmissionMessageType() throws Iso8583Exception;
+
+
 }
