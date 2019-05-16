@@ -20,13 +20,13 @@ import com.thumbzup.iso8583.exception.Iso8583Exception;
 
 public interface Iso8583Message {
 
-    void setField(int no, String value) throws Iso8583Exception;
+    void setField(int no, String value);
 
-    void setField(String path, String value) throws Iso8583Exception;
+    void setField(String path, String value);
 
-    void setField(int no, byte[] value) throws Iso8583Exception;
+    void setField(int no, byte[] value);
 
-    void setField(String path, byte[] value) throws Iso8583Exception;
+    void setField(String path, byte[] value);
 
     int getMaxField();
 

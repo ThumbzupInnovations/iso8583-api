@@ -17,5 +17,5 @@
 package com.thumbzup.iso8583;
 
 public enum AcquirerProtocol {
-    BASE24, AS2805, POSTBRIDGE
+    BASE24, AS2805, POSTBRIDGE, TRADEROUTE
 }
