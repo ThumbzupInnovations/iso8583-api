@@ -185,12 +185,12 @@
         <repository>
             <id>artifactory-release</id>
             <name>Thumbzup Artifactory-releases</name>
-            <url>http://artifactory.thumbzup.com:8081/artifactory/libs-release</url>
+            <url>https://artifactory.thumbzup.com/artifactory/libs-release</url>
         </repository>
         <snapshotRepository>
             <id>artifactory-snapshots</id>
             <name>Thumbzup Artifactory-snapshots</name>
-            <url>http://artifactory.thumbzup.com:8081/artifactory/libs-snapshot</url>
+            <url>https://artifactory.thumbzup.com/artifactory/libs-snapshot</url>
         </snapshotRepository>
     </distributionManagement>
 
