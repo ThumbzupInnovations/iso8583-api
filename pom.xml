@@ -17,7 +17,7 @@
         <version.compiler.plugin>3.5.1</version.compiler.plugin>
         <version.jar.plugin>3.0.2</version.jar.plugin>
         <version.bouncycastle>1.67</version.bouncycastle>
-        <version.log4j>2.17.0</version.log4j>
+        <version.log4j>2.17.1</version.log4j>
     </properties>
 
     <build>
